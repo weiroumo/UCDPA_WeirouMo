@@ -18,3 +18,20 @@ import pandas as pd
 df = pd.read_csv('Airplane_Crashes_and_Fatalities_Since_1908_20190820105639.csv')
 print(df.head())
 
+# importing data
+import pandas as pd
+file = "Train.csv"
+commerce = pd.read_csv(file)
+
+#
+print(commerce.shape)
+print(commerce.info())
+print(commerce.columns)
+
+# sorting data by Cost_of_the_Product and Weight_in_gms
+commerce_cost_weight = commerce.sort_values(["Cost_of_the_Product", "Weight_in_gms"], ascending = [False, True])
+print(commerce_cost_weight)
+
+# filter rows where Mode_of_Shipment is Ship and Weight is > 4000
+commerce_ship_time = commerce[(commerce["Mode_of_Shipment"] == "Ship") & (commerce["Weight_in_gms"] > 4000)]
+print(commerce_ship_time)
