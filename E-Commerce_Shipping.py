@@ -35,13 +35,3 @@ print(commerce_cost_weight)
 # filter rows where Mode_of_Shipment is Ship and Weight is > 4000
 commerce_ship_time = commerce[(commerce["Mode_of_Shipment"] == "Ship") & (commerce["Weight_in_gms"] > 4000)]
 print(commerce_ship_time)
-
-# index commerce by Product_importance
-commerce_ind = commerce.set_index("Product_importance")
-print(commerce_ind)
-
-# Make a list of modes to subset on
-importance = ["high", "medium"]
-
-# Subset commerce_ind on using .loc[]
-print(commerce_ind.loc[importance])
