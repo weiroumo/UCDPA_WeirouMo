@@ -40,8 +40,14 @@ print(commerce_ship_time)
 commerce_ind = commerce.set_index("Product_importance")
 print(commerce_ind)
 
-# Make a list of modes to subset on
+# Make a list of importance to subset on
 importance = ["high", "medium"]
 
 # Subset commerce_ind on using .loc[]
 print(commerce_ind.loc[importance])
+
+# Sort commerce_ind by index values
+commerce_srt = commerce_ind.sort_index()
+
+# Slicing columns from Cost_of_the_Product to Weight_in_gms
+print(commerce_srt.loc[:, "Cost_of_the_Product": "Weight_in_gms"])
