@@ -2,6 +2,18 @@ import pandas as pd
 file = "Train.csv"
 commerce = pd.read_csv(file)
 
+# check any missing data
+print(commerce.isna().any())
+
+# Get total number of Weight_in_gms shipped by each mode
+weight_shipped_by_mode = commerce.groupby("Mode_of_Shipment")["Weight_in_gms"].sum()
+
+# Create a bar plot of the number of Weight shipped by Flight
+weight_shipped_by_mode.plot(kind="bar")
+
+# Show the plot
+plt.show()
+
 # Import matplotlib.pyplot with alias plt
 import matplotlib.pyplot as plt
 
