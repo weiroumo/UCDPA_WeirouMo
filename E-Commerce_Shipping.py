@@ -1,19 +1,18 @@
-# Import pandas
-import pandas as pd
-
-# import airplane crash CSV file into a Pandas DataFrame and print its head
-df = pd.read_csv('Airplane_Crashes_and_Fatalities_Since_1908_20190820105639.csv')
-print(df.head())
 
 # importing data
 import pandas as pd
 file = "Train.csv"
 commerce = pd.read_csv(file)
 
-#
+# dataframe info
 print(commerce.shape)
 print(commerce.info())
 print(commerce.columns)
+
+
+# Drop duplicate ID/Warehouse_block combinations
+ID_Warehouse_block = commerce.drop_duplicates(subset=["ID", "Warehouse_block"])
+print(ID_Warehouse_block.head())
 
 # sorting data by Cost_of_the_Product and Weight_in_gms
 commerce_cost_weight = commerce.sort_values(["Cost_of_the_Product", "Weight_in_gms"], ascending = [False, True])
