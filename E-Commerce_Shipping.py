@@ -9,7 +9,7 @@ print(commerce.shape)
 print(commerce.info())
 print(commerce.columns)
 
-# check measing values
+# check missing values
 print(commerce.isna().any())
 
 # Drop duplicate ID/Warehouse_block combinations
