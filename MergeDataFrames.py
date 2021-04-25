@@ -27,4 +27,3 @@ import numpy as np
 def iqr(column):
     return column.quantile(0.75) - column.quantile(0.25)
 print(gdp_pop[["GDP", "Pop"]].agg([iqr, np.median]))
-
