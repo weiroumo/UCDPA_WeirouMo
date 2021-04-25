@@ -9,6 +9,8 @@ print(commerce.shape)
 print(commerce.info())
 print(commerce.columns)
 
+# check measing values
+print(commerce.isna().any())
 
 # Drop duplicate ID/Warehouse_block combinations
 ID_Warehouse_block = commerce.drop_duplicates(subset=["ID", "Warehouse_block"])
