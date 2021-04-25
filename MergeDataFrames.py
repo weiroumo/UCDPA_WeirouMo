@@ -20,4 +20,11 @@ print(gdp_pop.isna().any())
 for lab, row in gdp_pop.iterrows():
     print(str(lab) + row['Country Name'] + str(row['Year']) + ": " + str(row['GDP']/row['Pop']))
 
+# custom function
+import numpy as np
+
+# A custom IQR function
+def iqr(column):
+    return column.quantile(0.75) - column.quantile(0.25)
+print(gdp_pop[["GDP", "Pop"]].agg([iqr, np.median]))
 
