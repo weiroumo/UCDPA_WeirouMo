@@ -1,5 +1,3 @@
-import numpy as np
-
 # Create a dictionary of lists with new data
 aircraft_dict = {
   "MSN": ["60154", "0048", "8849"],
@@ -29,4 +27,6 @@ np_aircraft_age = np.array(aircraft_age)
 np_aircraft_age_mo = 12 * np_aircraft_age
 
 print(np_aircraft_age_mo)
+
+
 
