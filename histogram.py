@@ -24,3 +24,11 @@ commerce[commerce["Mode_of_Shipment"] == "Ship"]["Cost_of_the_Product"].hist(alp
 commerce[commerce["Mode_of_Shipment"] == "Road"]["Cost_of_the_Product"].hist(alpha=0.5,bins=20)
 plt.legend(["Flight", "Ship", "Road"])
 plt.show()
+
+
+#
+fig, ax = plt.subplots()
+ax.scatter(commerce["Weight_in_gms"], commerce["Cost_of_the_Product"])
+ax.set_xlabel("Weight_in_gms")
+ax.set_ylabel("Cost_of_the_Product")
+plt.show()
